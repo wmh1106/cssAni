@@ -27,7 +27,7 @@ ps:这个效果，如果不定位，具体值该怎么写？求解。
 
 ### 4. 翻牌效果
 
-(demo)[http://js.jirengu.com/sorip/1/edit]
+[demo](http://js.jirengu.com/sorip/1/edit)
 
 
 
