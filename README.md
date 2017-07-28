@@ -23,6 +23,7 @@ ps:这个效果，如果不定位，具体值该怎么写？求解。
 1. [插件swiper](http://www.swiper.com.cn/),移动端支持很好呦
 2. 轮播图
 	- 点击切换class就好。
+	- [demo](http://js.jirengu.com/zanar/1/edit?html,css,output)
 
 
 
