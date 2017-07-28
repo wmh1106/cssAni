@@ -14,9 +14,9 @@ ps:这个效果，如果不定位，具体值该怎么写？求解。
 
 ### 2. 航海王页面的效果
 
-[page](http://one-piece.cc/act/recall)
+- 参考：[page](http://one-piece.cc/act/recall)
 
-拿来直接用了(⊙﹏⊙)b
+- 拿来直接用了(⊙﹏⊙)b[demo](http://js.jirengu.com/qisa/31/edit)
 
 ### 3. 轮播图
 

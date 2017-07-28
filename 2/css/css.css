@@ -19,7 +19,7 @@ body {
     z-index: 0;
     width: 100%;
     height: 100%;
-    background: url("../img/bg.jpg") no-repeat center top;
+    background: url("http://obbxa1h0p.bkt.clouddn.com/bg3.jpg") no-repeat center top;
     background-size: 100% auto;
     animation: shakeAllEff 0.4s 0.7s ease-out both;
 }
