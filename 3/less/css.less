@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    position: relative;
+	width: 100%;
+	height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+img {
+    display: block;
+    width: 100%; // vertical-align: middle; 因为使用block了，该属性失效 
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+}
+
+.bg {
+    display: block;
+    position: relative;
+}
+
+.shuffling-figure {
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    z-index: 1;
+    width: 80%;
+    height: 67%;
+    padding: 0 18%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    box-sizing: border-box;
+    .show-img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        perspective: 800px;
+        transform-origin: center center;
+        li {
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            transition: 0.8s all;
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .5);
+                content: '';
+                transition: 0.3s all;
+            }
+            &.l2 {
+                opacity: 0;
+                transform: scale(0.8) rotateY(0deg) translateX(-30%);
+            }
+            &.l1 {
+                z-index: 2;
+                opacity: 2;
+                transform: scale(0.9) rotateY(14deg) translateX(-47%);
+            }
+            &.cur {
+                z-index: 3;
+                opacity: 1;
+                transform: scale(1) rotateY(0deg) translateX(0%) translateZ(56px);
+                &:after {
+                    background: rgba(0, 0, 0, 0);
+                }
+            }
+            &.r1 {
+                z-index: 2;
+                opacity: 1;
+                transform: scale(0.9) rotateY(-14deg) translateX(47%);
+            }
+            &.r2 {
+                opacity: 0;
+                transform: scale(0.8) rotateY(0deg) translateX(30%);
+            }
+        }
+    }
+    .btn-box {
+        position: absolute;
+        top: 0%;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        .next,
+        .prev {
+            position: absolute;
+            top: 50%;
+            width: 50%;
+            height: 100%;
+            transform: translate(0, -50%);
+            img {
+                position: absolute;
+                top: 50%;
+                width: 20%;
+                transform: translate(0%, -50%);
+            }
+        }
+        .prev {
+            left: 0;
+            img {
+                left: 0;
+            }
+        }
+        .next {
+            right: 0;
+            img {
+                right: 0;
+            }
+        }
+    }
+}

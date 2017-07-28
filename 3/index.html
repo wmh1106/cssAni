@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>demo3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="" href="./css/css.css">
+	</head>
+
+	<body>
+
+		<div class="shuffling-figure">
+			<ul class="show-img">
+				<li class="l2"><img src="http://obbxa1h0p.bkt.clouddn.com/1.png" alt=""></li>
+				<li class="l1"><img src="http://obbxa1h0p.bkt.clouddn.com/2.png" alt=""></li>
+				<li class="cur"><img src="http://obbxa1h0p.bkt.clouddn.com/3.png" alt=""></li>
+				<li class="r1"><img src="http://obbxa1h0p.bkt.clouddn.com/1.png" alt=""></li>
+				<li class="r2"><img src="http://obbxa1h0p.bkt.clouddn.com/2.png" alt=""></li>
+			</ul>
+			<div class="btn-box">
+				<span class="prev">
+                         <!-- <img src="img/left.jpg" alt="">  -->
+                    </span>
+				<span class="next">
+                         <!-- <img src="img/right.jpg" alt="">  -->
+                    </span>
+			</div>
+		</div>
+		<script src="../js/zepto.min.js"></script>
+		<script>
+			// 轮播
+			var arrClass = ['l2', 'l1', 'cur', 'r1', 'r2'];
+			$('.prev').on('click', function () {
+				var a = arrClass.shift();
+				arrClass.push(a);
+				$('.show-img li').each(function (idx, ele) {
+					ele.className = arrClass[idx];
+				})
+			});
+			$('.next').on('click', function () {
+				var a = arrClass.pop();
+				arrClass.unshift(a);
+				$('.show-img li').each(function (idx, ele) {
+					ele.className = arrClass[idx];
+				})
+			});
+		</script>
+
+	</body>
+
+</html>
