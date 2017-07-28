@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>demo4</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="" href="./css/css.css">
+	</head>
+
+	<body>
+
+
+		<div class="card-box">
+			<div class="card-child">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1.png" alt="">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1_active.png" alt="">
+			</div>
+			<div class="card-child">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1.png" alt="">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1_active.png" alt="">
+			</div>
+			<div class="card-child">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1.png" alt="">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1_active.png" alt="">
+			</div>
+			<div class="card-child">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1.png" alt="">
+				<img src="http://obbxa1h0p.bkt.clouddn.com/k1_active.png" alt="">
+			</div>
+		</div>
+		<img class="guang-bg" src="http://obbxa1h0p.bkt.clouddn.com/guang-bg.png" alt="">
+
+		<script>
+			window.onload = function () {
+				var img = document.querySelectorAll('.card-box img');
+				for (var i = 0; i < img.length; i++) {
+					img[i].classList.add('ani');
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

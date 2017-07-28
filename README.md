@@ -25,6 +25,18 @@ ps:这个效果，如果不定位，具体值该怎么写？求解。
 	- 点击切换class就好。
 	- [demo](http://js.jirengu.com/zanar/1/edit?html,css,output)
 
+### 4. 翻牌效果
 
+(demo)[http://js.jirengu.com/sorip/1/edit]
+
+
+
+
+---
+
+# 动画库
+
+- 抖动：[csshake](https://elrumordelaluz.github.io/csshake/)
+- 这个很常见，大家都知道的吧[animate](https://github.com/daneden/animate.css)
 
 
