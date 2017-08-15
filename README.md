@@ -40,3 +40,9 @@ ps:这个效果，如果不定位，具体值该怎么写？求解。
 - 这个很常见，大家都知道的吧[animate](https://github.com/daneden/animate.css)
 
 
+---
+
+# 轮播图：
+
+	宽高固定，改变容器的`left`值
+

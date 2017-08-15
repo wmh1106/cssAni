@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>轮播</title>
+		<link rel="stylesheet" href="./css/style.css">
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="nav">
+				<span class="on">跑步管理</span>
+				<span>跑步社交</span>
+				<span>跑步咨询</span>
+				<span>装备管理</span>
+			</div>
+			<div class="btn-box">
+				<span class="al"></span>
+				<span class="ar"></span>
+			</div>
+			<ul class="cmc">
+				<li data-index="0" class="a">0</li>
+				<li data-index="1" class="b">1</li>
+				<li data-index="2" class="c">2</li>
+				<li data-index="3" class="d">3</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script>
+	var btn = $('.btn-box span');
+	var navList = $('.nav span');
+	var ulBox = $('.cmc');
+
+	var firstLi = ulBox.find('li').first();
+	var lastLi = ulBox.find('li').last();
+
+	var idx = 0;
+	var len = ulBox.children().length; // 这里没有添加图片，所以是4
+	var isAnimate = false;
+
+	ulBox.prepend(lastLi.clone());
+	ulBox.append(firstLi.clone());
+
+	ulBox.width(firstLi.width() * ulBox.children().length)// 这里有添加图片，所以是6
+	// 初始化left
+	ulBox.css('left', -(firstLi.width()));
+
+	btn.eq(0).on('click', function () {
+		playPrev();
+	})
+	btn.eq(1).on('click', function () {
+		playNext();
+	})
+
+	function playNext() {
+		if (isAnimate) return;
+		isAnimate = true;
+		ulBox.animate({
+			left: '-=' + firstLi.width()
+		}, function () {
+			idx++;
+			if (idx === len) {
+				ulBox.css('left', -(firstLi.width()));
+				idx = 0;
+				console.log(idx, len)
+			}
+			isAnimate = false;
+			isActive();
+		})
+	}
+	function playPrev() {
+		if (isAnimate) return;
+		isAnimate = true;
+		ulBox.animate({
+			left: '+=' + firstLi.width() + ''
+		}, function () {
+			idx--;
+			if (idx === -1) {
+				ulBox.css('left', -(firstLi.width() * len));
+				idx = len - 1;
+				console.log(idx, len)
+			}
+			isAnimate = false;
+			isActive();
+		})
+	}
+
+	function isActive() {
+		navList.removeClass('on').eq(idx).addClass('on')
+	}
+</script>

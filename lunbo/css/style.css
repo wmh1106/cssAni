@@ -1,0 +1,112 @@
+*{
+	margin: 0;
+	padding:0;
+}
+img {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.main {
+	width: 855px;
+	margin: 0 auto;
+	border: 1px solid red;
+	position: relative;
+	overflow: hidden;
+}
+
+.main .nav {
+	width: 855px;
+	height: 72px;
+	margin: 0 auto;
+	border: 1px solid #0071b7;
+	border-radius: 72px;
+	overflow: hidden;
+}
+
+.main .nav span {
+	width: 187px;
+	height: 72px;
+	border-right: 1px solid #0071b7;
+	display: block;
+	font-size: 24px;
+	color: #0071b7;
+	text-align: center;
+	line-height: 72px;
+	float: left;
+	cursor: pointer;
+}
+
+.main .nav span:last-child {
+	width: 188px;
+	border-right: 0;
+}
+
+.main .nav span.on {
+	background: #0071b7;
+	color: #fff;
+}
+
+.main .btn-box span {
+	position: absolute;
+	z-index: 10;
+	width: 60px;
+	height: 60px;
+	margin-top: -30px;
+	cursor: pointer;
+	top: 50%;
+}
+
+.main .btn-box .al {
+	background: url(../images/arrow-left.png) no-repeat;
+	left: 0;
+}
+
+.main .btn-box .ar {
+	background: url(../images/arrow-right.png) no-repeat;
+	right: 0;
+}
+
+.main .cmc {
+	width: 855px;
+	overflow: hidden;
+	position: relative;
+}
+
+.main .cmc {
+	position: relative;
+	height: 352px;
+	left: 0;
+	--transition: all .5s;
+}
+
+.main .cmc li {
+	width: 855px;
+	float: left;
+	list-style: none;
+}
+
+.main .cmc li.a {
+	width: 855px;
+	height: 352px;
+	background: url(../images/li04.png) no-repeat center center
+}
+
+.main .cmc li.b {
+	width: 855px;
+	height: 352px;
+	background: url(../images/li03.png) no-repeat center center
+}
+
+.main .cmc li.c {
+	width: 855px;
+	height: 352px;
+	background: url(../images/li02.png) no-repeat center center
+}
+
+.main .cmc li.d {
+	width: 855px;
+	height: 352px;
+	background: url(../images/li01.png) no-repeat center center
+}
