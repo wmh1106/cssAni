@@ -29,7 +29,7 @@ ps:这个效果，如果不定位，具体值该怎么写？求解。
 
 [demo](http://js.jirengu.com/sorip/1/edit)
 
-
+### 5. 模拟点击操作
 
 
 ---
