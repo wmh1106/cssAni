@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>五行天</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="" href="./css/css.css">
+	</head>
+
+	<body>
+		
+		<div class="bg">
+			<img src="img/bg2.jpg" alt="">
+			<ul class="aniSign">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+		<script>
+			var arrSign = document.querySelectorAll('.aniSign li')
+			var len = arrSign.length;
+			var idx = 0;
+
+			for (var i = 0; i < arrSign.length; i++) {
+				arrSign[i].style.webkitAnimationPlayState = "paused";
+			}
+
+			function fnSign() {
+				this.style.webkitAnimationPlayState = "paused";
+				idx++;
+				if (idx > len - 1) idx = 0;
+				aniP(idx);
+			}
+
+			function aniP(idx) {
+				if(idx-1<0){
+					arrSign[len-1].removeAttribute('webkitAnimationIteration',fnSign,false);
+				}else{
+					arrSign[idx].removeAttribute('webkitAnimationIteration',fnSign,false);
+				}
+				
+				arrSign[idx].style.webkitAnimationPlayState = "running";
+				
+				arrSign[idx].addEventListener('webkitAnimationIteration', fnSign, false)
+			}
+
+			aniP(idx);
+
+			
+		</script>
+
+	</body>
+
+</html>
