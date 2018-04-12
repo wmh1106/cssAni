@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math.atan2应用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .warp {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .target {
+            position: absolute;
+            left: 0%;
+            bottom: 0;
+            z-index: 10;
+            height: 293px;
+            width: 311px;
+            margin-top: -146px;
+            margin-left: -155px;
+            background: url('./images/target.png') no-repeat;
+        }
+
+        .ball_box {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -238px;
+            margin-top: -519px;
+            height: 1038px;
+            width: 476px;
+            overflow: hidden;
+            /* transform-origin: center bottom; */
+            /* border: 1px solid red; */
+        }
+
+        .ball_box::before {
+            /* content: ""; */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 10;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #fff;
+            margin-left: -15px;
+            margin-top: -15px;
+        }
+
+        .ball_box::after {
+            /* content: ""; */
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #fff;
+            margin-left: -1px;
+        }
+
+        .ball_box .jian {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            height: 1038px;
+            width: 100px;
+            background: url('./images/jian.png') no-repeat;
+        }
+
+        .middle_target {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            height: 4px;
+            width: 4px;
+            background: red;
+        }
+
+        .middle_target::before {
+            content: "";
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            z-index: 10;
+            width: 1000px;
+            transform: translateX(-50%);
+            height: 1px;
+            background: #fff;
+        }
+
+        .middle_target::after {
+            content: "";
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 1px;
+            height: 1000px;
+            transform: translateY(-50%);
+            background: #fff;
+            margin-left: -1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="middle_target"></div>
+    <div class="warp">
+        <div class="target"></div>
+        <div class="ball_box">
+            <div class="jian"></div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var target = document.querySelector('.target');
+        var ball_box = document.querySelector('.ball_box');
+        var winW = document.documentElement.offsetWidth;
+        var winH = document.documentElement.offsetHeight;
+
+        var mark = {
+            x: winW / 2,
+            y: winH / 2
+        }
+
+        document.addEventListener('mousemove', fnMove, false);
+
+        function fnMove(ev) {
+            var x = ev.pageX;
+            var y = ev.pageY;
+            target.style.left = x + 'px';
+            target.style.top = y + 'px';
+            /*
+                Math.atan2(y,x)
+                表示点 (x, y) 对应的偏移角度。
+                这是一个逆时针角度，以弧度为单位，正X轴和点 (x, y) 与原点连线 之间。
+                注意此函数接受的参数：先传递 y 坐标，然后是 x 坐标。
+            */
+            var deg = Math.atan2(mark.y - y, x - mark.x) / (Math.PI / 180);
+            console.log(deg)
+
+            // 如果想保证方向正常 （90-deg）
+            ball_box.style.transform = 'rotate(' + (90 - deg) + 'deg)';
+        }
+    </script>
+</body>
+
+</html>
